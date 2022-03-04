@@ -16,4 +16,4 @@
 
 参考 example 包下的 demo，下图为该 demo 生成的效果，代码非常简洁。
 
-![](http://yuanzhixiang.github.io/boostpoi/image/image.png)
+![](https://raw.githubusercontent.com/yuanzhixiang/boostpoi/dev/image/image.png)
