@@ -16,22 +16,22 @@ public class Example {
         example.example_1();
     }
 
-    private final static String OUT_PUT_PATH = "/Users/zhixiangyuan/workspace/tmp/boostpoi/src/main/java/boostpoi/example/Sample-2.xlsx";
+    private final static String OUT_PUT_PATH = System.getProperty("user.home") + "/Desktop/Sample-2.xlsx";
 
     /**
      * 第一个使用示例，先看文件，再看代码
      */
     private void example_1() {
-        /** 1. 使用构造器创建 {@link BoostPOI} */
+        // 1. 使用构造器创建 {@link BoostPOI}
         BoostPOI boostpoi = new BoostPOI.Builder().setOutputPath(OUT_PUT_PATH).build();
-        /** 2. 设置默认列宽 */
+        // 2. 设置默认列宽
         boostpoi.getSheet().setDefaultColumnWidth(1);
         boostpoi.getSheet().setDefaultRowHeight((short)250);
-        /** 3. 创建单元格样式 */
+        // 3. 创建单元格样式
         XSSFCellStyle cellStyle = boostpoi.getEmptyCellStyle();
         cellStyle.setFillBackgroundColor((short)0);
         cellStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
-        /** 3. 向单元格中放入值 */
+        // 3. 向单元格中放入值
         boostpoi.moveToNextRow(10)
                 .moveToNextColumn(15)
                 .setResetColumnIndex(boostpoi.getColumnIndex())
@@ -278,7 +278,7 @@ public class Example {
                 .setNextColumnCellStyle(cellStyle)
                 .setNextColumnCellStyle(cellStyle)
                 .setNextColumnCellStyle(cellStyle);
-        /** 4. 创建文件 */
+        // 4. 创建文件
         boostpoi.createFile();
     }
 }
